@@ -2,7 +2,7 @@
 # like Pillow and psycopg2
 # See http://bitly.com/wheel-building-fails-CPython-35
 # Verified bug on Python 3.5.1
-wheel==0.30.0
+#wheel==0.30.0
 
 
 # Bleeding edge Django
@@ -10,8 +10,6 @@ django==1.10.8 # pyup: >=1.10,<1.11
 
 # Configuration
 django-environ==0.4.4
-
-
 
 # Forms
 django-crispy-forms==1.7.0
@@ -38,8 +36,8 @@ pytz==2017.3
 django-redis==4.8.0
 redis>=2.10.5
 
-
-
-
+# Python Social Auth
+social-auth-core==1.5.0
+social-auth-app-django==2.0.0
 
 # Your custom requirements go here

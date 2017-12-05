@@ -1,6 +1,8 @@
-FROM python:3.5
+FROM python:3.6
 
 ENV PYTHONUNBUFFERED 1
+
+RUN apt-get update -y && apt-get install -y libxml2-dev libxmlsec1-dev
 
 # Requirements have to be pulled and installed here, otherwise caching won't work
 COPY ./requirements /requirements

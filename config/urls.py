@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'^users/', include('steem_account_creation_service.users.urls', namespace='users')),
 
     # Your stuff: custom urls includes go here
-
+    url('', include('social_django.urls', namespace='social')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
