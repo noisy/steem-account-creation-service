@@ -16,6 +16,7 @@ services:
     environment:
       - POSTGRES_USER=steem_account_creation_service
       - USE_DOCKER=yes
+    env_file: .env.local
     ports:
       - "8000:8000"
     command: /start.sh
@@ -29,5 +30,4 @@ services:
       - postgres_backup_local:/backups
     environment:
       - POSTGRES_USER=steem_account_creation_service
-
-
+    env_file: .env.local

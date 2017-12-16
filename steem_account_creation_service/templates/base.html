@@ -49,17 +49,11 @@
                 <a class="nav-link" href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a>
               </li>
               <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a class="nav-link" href="">{% trans "Sign Out" %}</a>
+                <a class="nav-link" href="/logout/">{% trans "Sign Out" %}</a>
               </li>
             {% else %}
               <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="sign-up-link" class="nav-link" href="">{% trans "Sign Up" %}</a>
-              </li>
-              <li class="nav-item">
-                {# URL provided by django-allauth/account/urls.py #}
-                <a id="log-in-link" class="nav-link" href="{% url "social:begin" "linkedin-oauth2" %}">{% trans "Sign In" %}</a>
+
               </li>
             {% endif %}
           </ul>
@@ -77,7 +71,11 @@
       {% endif %}
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+          <ul>
+            <li><a href="{% url "social:begin" "github" %}">{% trans "Login with Github" %}</a></li>
+            <li><a href="{% url "social:begin" "linkedin" %}">{% trans "Login with LinkedIn" %}</a></li>
+            <li><a href="{% url "social:begin" "facebook" %}">{% trans "Login with Facebook" %}</a></li>
+          </ul>
       {% endblock content %}
 
     </div> <!-- /container -->

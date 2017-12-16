@@ -5,9 +5,20 @@ from django.contrib import admin
 from django.views.generic import TemplateView
 from django.views import defaults as default_views
 
+from django.shortcuts import redirect
+from django.contrib.auth import logout as auth_logout
+
+
+def logout(request):
+    """Logs out user"""
+    auth_logout(request)
+    return redirect('/')
+
+
 urlpatterns = [
     url(r'^$', TemplateView.as_view(template_name='pages/home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='pages/about.html'), name='about'),
+    url(r'^logout/$', logout),
 
     # Django Admin, use {% url 'admin:index' %}
     url(settings.ADMIN_URL, admin.site.urls),
